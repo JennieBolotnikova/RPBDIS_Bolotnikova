@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Classroom>
+@{
+    ViewData["Title"] = "Аудитории";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p align="center">
+    <table border="1">
+        <tr>
+            <td>ID аудитории</td>
+            <td>Номер аудитории</td>
+            <td>Корпус</td>
+            <td>Количество мест</td>
+            <td>Тип аудитории</td>
+        </tr>
+        @foreach (var classroom in Model)
+        {
+            <tr>
+                <td>@classroom.ClassroomID</td>
+                <td>@classroom.ClassroomNumber</td>
+                <td>@classroom.Building.BuildingName</td>
+                <td>@classroom.NumberOfSeats</td>
+                <td>@classroom.ActivityTypeID</td>
+            </tr>
+        }
+    </table>
+</p>
+
+

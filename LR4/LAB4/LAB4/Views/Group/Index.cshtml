@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Group>
+@{
+    ViewData["Title"] = "Группы";
+}
+
+<h1>@ViewData["Title"]</h1>
+<p align="center">
+    <table border="1">
+        <tr>
+            <td>ID группы</td>
+            <td>Название группы</td>
+            <td>Номер группы</td>
+            <td>Факультет</td>
+            <td>Количество студентов</td>
+        </tr>
+        @foreach (var group in Model)
+        {
+    <tr>
+        <td>@group.GroupID</td>
+        <td>@group.GroupName</td>
+        <td>@group.GroupNumber</td>
+        <td>@group.Faculty.FacultyName</td>
+        <td>@group.NumberOfStudents</td>
+    </tr>
+        }
+    </table>
+</p>
+

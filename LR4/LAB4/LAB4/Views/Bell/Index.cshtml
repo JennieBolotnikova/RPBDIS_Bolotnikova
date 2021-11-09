@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Bell>
+    @{
+        ViewData["Title"] = "Расписание звонков";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+    <p align="center">
+        <table border="1">
+            <tr>
+                <td>ID пары</td>
+                <td>Время начала пары</td>
+                <td>Время окончания пары</td>
+            </tr>
+            @foreach (var bell in Model)
+            {
+            <tr>
+                <td>@bell.BellID</td>
+                <td>@bell.LessonStartTime</td>
+                <td>@bell.LessonEndTime</td>
+            </tr>
+            }
+        </table>
+    </p>

@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Faculty>
+    @{
+    ViewData["Title"] = "Факультеты";
+    }
+
+    <h1>@ViewData["Title"]</h1>
+    <p align="center">
+        <table border="1">
+            <tr>
+                <td>ID факультета</td>
+                <td>Название факультета</td>
+            </tr>
+            @foreach (var faculty in Model)
+            {
+            <tr>
+                <td>@faculty.FacultyID</td>
+                <td>@faculty.FacultyName</td>
+            </tr>
+            }
+        </table>
+    </p>
